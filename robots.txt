@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://instore-events.co.jp/sitemap.xml
+
+# Crawl-delay (optional - adjust as needed)
+Crawl-delay: 1
+
+# Disallow specific files/directories (if any)
+# Disallow: /private/
+# Disallow: /temp/
+
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block spam bots (optional)
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インストア イベントスペース - テストページ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #0066ff;
+        }
+        
+        .btn {
+            padding: 10px 20px;
+            background: #0066ff;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0052cc;
+            transform: translateY(-1px);
+        }
+        
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .hero-title {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: #1a1a1a;
+            border: 1px solid #ddd;
+        }
+        
+        .btn-outline:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: #f0f0f0;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 60px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .service-description {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 32px;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="logo">🏪 インストア イベントスペース</div>
+                <ul class="nav-links">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#services">サービス</a></li>
+                    <li><a href="#channels">取扱チャネル</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+                <a href="#contact" class="btn">無料相談</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1 class="hero-title">
+                    お客様との心をつなぐ、<br>
+                    <span style="color: #0066ff;">リアル体験の場</span>をプロデュース
+                </h1>
+                
+                <p class="hero-subtitle">
+                    全国の主要小売チェーンで、直接お客様とコミュニケーションできるインストア・イベントスペースをご提供。展示会、体験会、商談会など、様々なイベントでブランド価値を高めます。
+                </p>
+                
+                <div class="hero-actions">
+                    <a href="#contact" class="btn">💬 無料相談を始める</a>
+                    <a href="#services" class="btn btn-outline">↓ サービス詳細</a>
+                </div>
+                
+                <div class="hero-image">
+                    📷 イベントスペースの様子
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section" style="background: #f8f9fa;">
+            <div class="container">
+                <h2 class="section-title">サービスの特徴</h2>
+                <p class="section-subtitle">リアルなコミュニケーションで、お客様との絆を深め、ブランド価値を向上させます</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">🏪</div>
+                        <h3 class="service-title">全国展開ネットワーク</h3>
+                        <p class="service-description">イトーヨーカドー、ヨークマート、OKストア、オリンピック、いなげやなど主要チェーンでのイベント展開が可能です。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🤝</div>
+                        <h3 class="service-title">直接コミュニケーション</h3>
+                        <p class="service-description">展示会、体験会、商談会、試飲試食など、お客様と直接触れ合える場を企画・運営いたします。</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">📈</div>
+                        <h3 class="service-title">効果的なプロモーション</h3>
+                        <p class="service-description">物販、アンケート、サンプリングなど多様な手法で、ブランド認知向上と売上アップを実現します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        console.log('✨ テストページが正常に読み込まれました');
+        
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
