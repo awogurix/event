@@ -37,8 +37,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Fonts - Using system fonts for better performance and reliability -->
     
     <!-- Inline Critical CSS -->
     <style>
@@ -54,10 +53,12 @@
         }
         
         body {
-            font-family: 'Noto Sans JP', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            line-height: 1.7 !important;
+            color: #1a1a1a !important;
+            background: #fff !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
         }
         
         .container {
@@ -202,12 +203,31 @@
         
         /* Hero Section */
         .hero {
-            padding: 8rem 0;
-            background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
-            min-height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 8rem 0 !important;
+            background: linear-gradient(
+                rgba(26, 26, 26, 0.75), 
+                rgba(44, 62, 80, 0.8)
+            ), 
+            url('https://page.gensparksite.com/v1/base64_upload/fc65d8bf4641f881fcfae5164e9a20b9') no-repeat center center !important;
+            background-size: cover !important;
+            background-attachment: fixed !important;
+            min-height: 80vh !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            position: relative !important;
+        }
+        
+        /* 追加の確実性のため */
+        section.hero {
+            background-image: linear-gradient(
+                rgba(26, 26, 26, 0.75), 
+                rgba(44, 62, 80, 0.8)
+            ), 
+            url('https://page.gensparksite.com/v1/base64_upload/fc65d8bf4641f881fcfae5164e9a20b9') !important;
+            background-size: cover !important;
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
         }
         
         .hero-content {
@@ -232,39 +252,43 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(0, 102, 255, 0.08);
-            color: #0066ff;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
             font-size: 0.875rem;
             font-weight: 600;
             border-radius: 50px;
             margin-bottom: 2rem;
-            border: 1px solid rgba(0, 102, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
         }
         
         .hero-title {
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.1;
-            color: #1a1a1a;
+            color: #ffffff;
             margin-bottom: 1.5rem;
             letter-spacing: -0.02em;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .accent {
-            color: #0066ff;
+            color: #3498db;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         .hero-subtitle {
             font-size: 1.25rem;
-            color: #666;
+            color: #f8f9fa;
             line-height: 1.6;
             margin-bottom: 2.5rem;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
         
         .hero-actions {
@@ -283,17 +307,18 @@
         }
         
         .btn-outline {
-            background: transparent;
-            color: #1a1a1a;
-            border: 1px solid #e9ecef;
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
         }
         
         .btn-outline:hover {
-            background: #1a1a1a;
-            color: white;
-            border-color: #1a1a1a;
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.5);
             transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
         
         /* Responsive */
@@ -1033,13 +1058,15 @@
             #contact .form-group textarea {
                 font-size: 16px !important; /* Prevents zoom on iOS */
             }
+            
+            /* Mobile hero background fix */
+            .hero {
+                background-attachment: scroll !important;
+            }
         }
     </style>
     
-    <!-- External CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/style.css?v=1.0.0">
-    <link rel="stylesheet" href="./backup-style.css">
+    <!-- External CSS - Removed for deployment reliability -->
 </head>
 <body>
     <!-- Header -->
@@ -1047,7 +1074,7 @@
         <nav class="navbar">
             <div class="container">
                 <div class="nav-brand">
-                    <img src="./images/logo.svg" alt="インストア イベントスペース" class="logo">
+                    <img src="images/logo.svg" alt="インストア イベントスペース" class="logo">
                     <span class="brand-text">インストア イベントスペース</span>
                 </div>
                 
@@ -1075,7 +1102,7 @@
 
     <main>
         <!-- Hero Section - Redesigned -->
-        <section id="home" class="hero">
+        <section id="home" class="hero" style="background: linear-gradient(rgba(26, 26, 26, 0.75), rgba(44, 62, 80, 0.8)), url('https://page.gensparksite.com/v1/base64_upload/fc65d8bf4641f881fcfae5164e9a20b9') no-repeat center center !important; background-size: cover !important; min-height: 80vh !important;">
             <div class="hero-content">
                 <div class="container">
                     <div class="hero-badge">
